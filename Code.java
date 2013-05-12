@@ -2,7 +2,7 @@ public class Code{
 
 	public static void main(String []args){
 
-		System.out.println("The parameter is now "+args[0]);
+		System.out.println("Passed parameter was "+args[0]);
 
 
 	}
