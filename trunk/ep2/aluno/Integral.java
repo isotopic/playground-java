@@ -5,9 +5,9 @@
 /**                                                               **/
 /** Segundo Exercicio-Programa                                    **/
 /**                                                               **/
-/** <Nome>  <nusp>                                                **/
+/** Carlos Guilherme Spinola Cruz   nusp 4903387                  **/
 /**                                                               **/
-/** <data de entrega>                                             **/
+/** 15/05/2013                                                    **/
 /*******************************************************************/
 
 class Integral {
@@ -17,15 +17,28 @@ class Integral {
 		
 		O método retorna -1 caso n não seja maior ou igual a 1.
 	*/
+
 	static double resolve(Funcao f, double a, double b, int n) {
+
+		//Consistências
 		if (n<1) return -1;
+		if (b<=a) return 0;
 
-		return f.valor(30);
+		//Area resultante (será o retorno final do método, contendo a soma das N áreas fracionadas)
+		double S = 0;
 
-		//calcular integral aqui
+		//Altura* de cada fração  (*apesar de ser chamado de altura, corresponde a um segmento no eixo x para cada fração da área total)
+		double h = (b - a)/n;
 
-		double fracaoH = (b - a)/n;
-		
+		//i representa cada incremento de fração (total n frações). As bases (menor e maior) em cada fração são representadas por f.valor(i*h) e f.valor((i+1)*h) 
+		for(int i=0; i<n ; i++){
+
+			//Incrementa S com área desta fração específica: (base menor + base maior)*h dividido por 2
+			S += ((f.valor(i*h) + f.valor((i+1)*h))*h)/2;
+
+		}
+
+		return S;
 
 	}
 }

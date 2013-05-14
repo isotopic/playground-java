@@ -7,7 +7,6 @@ class Funcao {
 		de raio 1, centrada em (0,0)
 	*/
 	double valor(double ponto) {
-		//return(Math.sqrt(1-ponto*ponto));
-		return (ponto*ponto);
+		return(Math.sqrt(1-(ponto*ponto)));
 	}
 }
