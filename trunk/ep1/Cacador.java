@@ -324,6 +324,9 @@ class Cacador {
 			posicoes - Arranjo que recebera o resultado da busca.
 	*/
 	static void  cacaPalavras(char[][] quadro, char[][] palavras, int[][] posicoes) {
+
+		long timeA = System.nanoTime();
+
 		//Loop por cada palavra do array palavras fornecido:
 		for(int a =0;a<palavras.length;a++){
 			//Loop por cada letra do quadro:
@@ -339,6 +342,10 @@ class Cacador {
 				}
 			}
 		}
+		long timeB = System.nanoTime();
+
+		long deltaTime = timeB - timeA;
+		System.out.println("Tempo total de processamento foi de "+deltaTime+"ms");
 	}
 
 
@@ -382,7 +389,7 @@ class Cacador {
 		imprimeQuadro (quadro1);
 		cacaPalavras (quadro1, palavras1, posicoes1);
 		imprimeResposta (palavras1, posicoes1);
-		/*
+		
 		imprimeQuadro (quadro2);
 		cacaPalavras (quadro2, palavras2, posicoes2);
 		imprimeResposta (palavras2, posicoes2);
@@ -398,7 +405,7 @@ class Cacador {
 		imprimeQuadro (quadro5);
 		cacaPalavras (quadro5, palavras5, posicoes5);
 		imprimeResposta (palavras5, posicoes5);
-		*/
+		
 	}
 }
 

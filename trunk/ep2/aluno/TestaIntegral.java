@@ -1,28 +1,13 @@
-/**
-	Classe usada para seus testes
-*/
 class TestaIntegral {
 
-	/*
-		Para seus testes
-	*/
 	public static void main(String[] args) {
-		/*
-			Como a equação é y = raiz(1-x^2), sua integral, de 0 a 1 dará a área
-			de 1/4 do círculo = (1/4)Pi (pois o raio é 1). Isso foi escolhido assim
-			para que você possa testar o resultado contra Pi/4. Se quiser, use outras
-			funções em "valor" dentro de "Funcao" para testar, pois essa classe não
-			será entregue.
-		*/
-		Funcao f = new Funcao();
-		// veja como a aproximação funciona
 
-		
+		Funcao f = new Funcao();
+
 		for (int i=1; i<100; i++)
 			System.out.println("\nValor apr.: "+Integral.resolve(f,-1,0,i));
-		System.out.println("Valor real: "+(Math.PI/4));
-		
 
+		System.out.println("Valor real: "+(Math.PI/4));
 
 	}
 
